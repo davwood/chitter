@@ -1,0 +1,217 @@
+body {
+   text-align: center; 
+  font-family: 'Raleway', sans-serif;
+  background:url("../images/background.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover; 
+  -moz-background-size: cover; 
+  -o-background-size: cover; 
+  background-size: cover; 
+  font-size:14px;
+}
+
+header {  
+  height: 60px;
+  background-color: black;
+  color: white;
+  display: flex; /* http://learnlayout.com/flexbox.html */
+  padding: 0 40px;
+}
+
+header > * {
+    margin: auto 0;
+  }
+  header #logo {    
+    margin-right: 20px;
+       
+  }
+
+  header a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+  }
+
+  header #user {
+    flex: 1; /* http://learnlayout.com/flexbox.html */
+    -webkit-flex: 1;
+    text-align: right;  
+  }
+
+  header #user > * {
+    display: inline-block;
+  }
+
+  header #user #welcome-message {
+    font-size: 14px;
+  }
+
+#peep-container {
+  background-color: #087891;
+  margin:100px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#peep-container li {
+	text-align: left; 
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
+  /* 10px for top and bottom, inherit from parent */
+  /* for left and right */
+  margin: 10px inherit;
+  padding: 15px 10px;
+  border-radius: 15px;
+
+}
+
+#new_peep_box textarea {
+    border: 5px solid white; 
+    -webkit-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    -moz-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    padding: 15px;
+  }
+
+
+.button {
+  display: inline-block; /* display inline but have dimensions */
+  width: 110px;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: #043A47;
+  border: 2px solid white;
+  color: white; /*text colour*/
+  padding: 5px 10px;
+  text-align: center;
+  border-radius: 4px; /*rounded corners*/
+  margin-left: 5px;
+  margin-right: 5px;
+  text-shadow: 0 0 2px rgba(0,0,0,0.4); /*for readability*/
+  text-decoration: none
+}
+
+.body_button {
+  display: inline-block; 
+  width: 110px;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: #043A47;
+  border: 2px solid white;
+  color: white; /*text colour*/
+  padding: 5px 10px;
+  text-align: center;
+  border-radius: 4px; /*rounded corners*/
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: auto;
+  text-shadow: 0 0 2px rgba(0,0,0,0.4); /*for readability*/
+}
+
+.date {
+display:inline;
+text-align: left;
+font-size: 11px;	
+}
+
+.fullname {
+display:inline-block;
+text-align: left;
+text-decoration: bold;
+margin-left: 30px;
+margin-bottom: 20px;
+}
+
+.source {
+text-align: left;
+display:inline-block;
+font-size: 11px;
+margin-bottom: 10px;
+}
+
+.message {
+font-size: 15px;	
+margin-left: 90px;
+}
+
+.date {
+text-align: right;
+font-size: 11px;	
+}
+
+#reply {
+	float:left;
+}
+
+.peepreply {
+  width: 50px;
+  font-size: 13px;
+  background-color: #043A47;
+  color: white; /*text colour*/
+  text-decoration: none;
+  padding: 5px 10px;
+  text-align: center;
+  border-radius: 4px; /*rounded corners*/
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: auto;
+  text-shadow: 0 0 2px rgba(0,0,0,0.4); /*for readability*/
+}
+
+
+form label{
+	float:left; 
+	text-align:right; 
+	width:150px;
+
+}
+.formItem input {
+border: 1px solid white; 
+    -webkit-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    -moz-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    padding: 6px;	
+}
+
+#main { width:320px; 
+	background-color:white;
+	border-radius: 10px;
+	margin: 40px;
+	margin-left: auto ;
+  	margin-right: auto ;
+  	padding-bottom: 10px;
+}
+
+h1 {
+	font-size: 20px;
+	padding-top: 10px;
+	padding-bottom: 15px;
+}
+
+#peep_button .body_button{
+	height: 40px;
+	font-size: 20px;
+	width: 330px;
+	margin-bottom: 40px;
+}
+
+#new_peep {
+width:700px; 
+margin-left: auto ;
+margin-right: auto ;
+}
+
+
+

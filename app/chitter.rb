@@ -3,6 +3,8 @@ require 'data_mapper'
 require 'rack-flash'
 require 'sinatra/partial'
 require_relative '../lib/user'
+require_relative '../lib/peep'
+
 # require_relative 'helpers/application'
 require_relative 'data_mapper_setup'
 
@@ -13,6 +15,7 @@ set :partial_template_engine, :erb
 
 
 get '/' do
+  @peeps = Peep.all(:order => [:created_at.desc])
   erb :index
 end
 
@@ -50,6 +53,8 @@ end
 post '/users' do
   @user = User.new(:email => params[:email], 
               :username => params[:username],
+              :first_name => params[:first_name],
+              :last_name => params[:last_name],
               :password => params[:password],
               :password_confirmation => params[:password_confirmation])  
   # the user id will be nil if the user wasn't saved when password didn't match
@@ -61,6 +66,14 @@ post '/users' do
     flash.now[:errors] = @user.errors.full_messages
     erb :"users/new"
   end
+end
+
+
+post '/peep' do
+   Peep.create(:message => params[:message],
+            :created_at => Time.now,
+            :user => current_user)
+    redirect to('/')
 end
 
 

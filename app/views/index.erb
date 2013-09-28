@@ -1,17 +1,46 @@
-<div id="logo"><a href='/'>Chitter</a></div>
-  
-  <div id="user">
-    <% if current_user %>
-      <span id="welcome-message">
-        Welcome, <%= current_user.email %>  
-      </span>
-    
-      <form id="sign-out" method="post" action="/sessions">
-        <input type="hidden" name="_method" value="delete">
-        <input type="submit" value="Sign out">
-      </form>
-    <% else %>
-      <a href='/users/new' id='sign-up' class='button'>Sign up</a>
-      <a href='/sessions/new' id='sign-in' class='button'>Sign in</a>      
-    <% end %>
+
+  <div id='peep-container'>
+    <ul id='peeps'>
+      <% @peeps.each do |peep| %>
+        <li>
+           <div class="date">
+            <%= peep.created_at.strftime("%d %a %H:%M")%>
+          </div>
+          <div class="fullname">
+            <%= peep.user.first_name %> <%= peep.user.last_name %>
+          </div>
+
+          <div class='source'>
+            <%= "@"+peep.user.username %>
+          </div>
+          <br>
+          <% if current_user %>
+           <div id="reply">
+            <a href='/reply/new' class='peepreply'>reply</a>
+          </div>
+          <% end %>
+          <div class="message">
+            <%= peep.message %>
+          </div>
+         
+        </li>
+      <% end %>
+    </ul>
   </div>
+
+  <% if current_user %>
+  <div id="new_peep">
+
+    <form id="new_peep_box" method="post" action="/peep">
+        
+      
+        <textarea maxlength="140" rows="2" cols="40" name="message" placeholder="Compose new peep"></textarea>
+      
+      <!-- <input name="message" type="text" size="140"> -->
+      <div id="peep_button">
+        <input type="submit" value="Peep it!" class="body_button">
+      </div>
+    </form>
+
+  </div>
+  <% end %>

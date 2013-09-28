@@ -1,7 +1,17 @@
+<div id="main">
 <h1>Please sign in</h1>
 
-<form action="/sessions" method="post">
-  Email: <input name="email" type="text">
-  Password: <input name="password" type="password"> 
-  <input type="submit" value="Sign in">
-</form>
+	<form action="/sessions" method="post">
+		<div class="formItem">
+	  		<label>Email:</label>
+	  		<input name="email" type="text">
+	  	</div>
+	  	<div class="formItem"> 
+	  		<label>Password:</label>
+	  		<input name="password" type="password"> 
+	  	</div>
+	  	<div class="formItem">
+	  <input type="submit" value="Sign in" class='body_button'>
+	  	</div>
+	</form>
+</div>
